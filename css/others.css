@@ -1,0 +1,298 @@
+@import url(https://fonts.googleapis.com/css2?family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100;300;400;500;600;700;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Sancreek&display=swap);
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  margin: 0;
+  font-family: "Big Shoulders Text", cursive;
+  letter-spacing: 1px;
+}
+/* despre */
+.container {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    -180deg,
+    rgb(121, 99, 79) 0%,
+    rgb(58, 58, 58) 97%
+  );
+  overflow-y: hidden;
+}
+.navbar {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  font-family: Prompt, cursive;
+  background-color: rgb(1, 6, 6);
+  position: relative;
+  z-index: 10;
+}
+.nav-logo {
+  height: 100%;
+  width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  width: 200px;
+  max-width: 30vw;
+  margin-left: 24px;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+  position: relative;
+}
+.nav-link::after {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0px;
+  height: 3px;
+  background-color: rgb(170, 115, 64);
+  transition: all 0.5s ease 0s;
+}
+.nav-link:hover::after {
+  width: 150%;
+}
+.header {
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
+  width: 100%;
+  height: 50vh;
+  filter: grayscale(0%);
+  animation: 5s ease 0s infinite alternate none running blurr;
+}
+.header-bg {
+  height: 100%;
+  clip-path: polygon(100% 0px, 100% 70%, 0px 100%, 0px 0px);
+  background: url("../images/despre.jpg") center center / cover no-repeat;
+  mix-blend-mode: screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: white;
+  font-family: Sancreek, cursive;
+  filter: blur(0px);
+  padding: 10px 30px;
+  background-color: rgba(0, 0, 0, 0.757);
+  transform: skewY(-5deg);
+}
+.main-content {
+  max-width: 1100px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to left,
+    white,
+    grey 5%,
+    grey 95%,
+    white 100%
+  );
+  margin: calc(-50vh - 80px) auto 0px;
+}
+.images-container {
+  max-width: 1000px;
+  width: 90%;
+  margin: 0px auto;
+  background-color: rgb(245, 245, 245);
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: calc(50vh + 80px) 8px 50px;
+  position: relative;
+  z-index: 1;
+}
+.images-row {
+  padding: 0px 12px 50px;
+  min-height: 100%;
+  background-color: rgb(245, 245, 245);
+  font-family: "Prompt", cursive;
+  overflow: hidden;
+  position: relative;
+}
+.images-row img {
+  float: right;
+  width: 50%;
+  transition: all 0.5s ease 0s;
+}
+.images-row .alternateImg {
+  position: absolute;
+  top: 0px;
+  right: 11px;
+  width: calc(50% - 11px);
+  transition: all 1s ease 0s;
+}
+.images-row .alternateImg:hover {
+  opacity: 0;
+}
+/* preturi */
+.aside {
+  background-color: white;
+  width: 30%;
+  height: 450px;
+  margin: 32px 12px;
+  transition: all 0.6s ease 0s;
+  box-shadow: lightgray 0px 0px 10px 0px;
+}
+.aside:hover {
+  box-shadow: lightgray 0px 0px 20px 10px;
+}
+.image-container {
+  width: 100%;
+  object-fit: cover;
+  background-image: linear-gradient(
+    -125deg,
+    rgba(121, 99, 79, 0.463),
+    rgba(87, 54, 24, 0.73)
+  );
+  position: relative;
+  overflow: hidden;
+}
+.image-container::before {
+  content: "";
+  position: absolute;
+  bottom: -300px;
+  left: -300px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.345);
+  filter: invert(50%);
+  transition: all 0.5s ease 0s;
+  z-index: 1;
+}
+.image-container::after {
+  content: "";
+  position: absolute;
+  top: -300px;
+  right: -300px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(120, 120, 252, 0.306);
+  filter: saturate(50%);
+  transition: all 0.5s ease 0s;
+  z-index: 1;
+}
+.image-container:hover::before {
+  bottom: -100px;
+  left: -150px;
+}
+.image-container:hover::after {
+  top: -100px;
+  right: -150px;
+}
+.image-container:hover > img {
+  clip-path: polygon(100% 0px, 100% 41%, 100% 100%, 0px 100%, 0px 0px);
+}
+.image {
+  clip-path: polygon(84% 9%, 95% 40%, 56% 98%, 7% 68%, 13% 15%);
+  width: 100%;
+  transition: all 0.6s ease 0s;
+}
+.package {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.package-title {
+  background-color: rgb(1, 6, 6);
+  color: white;
+  position: absolute;
+  top: -20px;
+  left: 0px;
+  margin: 0px;
+  padding: 5px 30px 5px 5px;
+  z-index: 2;
+}
+.price {
+  text-align: right;
+  margin: 2px 5px;
+}
+.services {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.service {
+  margin: 0px;
+  text-decoration: underline;
+}
+.package > button {
+  background-color: rgb(58, 58, 58);
+  color: rgba(0, 0, 0, 0.04);
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+}
+.package > button:hover {
+  background-color: rgba(0, 0, 0, 0.342);
+}
+.package > button span,
+.package > button a {
+  color: white;
+  text-decoration: none;
+}
+/* rezervari */
+.contact-info {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.contact-info a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+iframe {
+  width: 85%;
+  height: 300px;
+  border: none;
+  display: block;
+  margin: 25px auto;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .images-row img {
+    width: 100%;
+  }
+  .images-row .alternateImg {
+    width: calc(100% - 21px);
+  }
+}
+@media screen and (max-width: 768px) {
+  .images-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .aside {
+    width: 92%;
+  }
+}

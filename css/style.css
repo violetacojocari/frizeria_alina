@@ -380,7 +380,6 @@ body {
   text-decoration: none;
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
   font-family: Sancreek, cursive;
 }
 .footer-copyright {
@@ -388,6 +387,24 @@ body {
   width: 60%;
   font-family: Prompt, cursive;
 }
+.marquee {
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee p {
+  position: absolute;
+  width: 1300px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 50px;
+  text-align: center;
+  transform: translateX(100%);
+  animation: scroll-left 20s linear infinite;
+}
+
 .footer-social {
   display: flex;
   justify-content: space-between;
@@ -397,6 +414,14 @@ body {
 .footer-social-icon {
   color: white;
   font-size: 1.5rem;
+}
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 @media screen and (max-width: 768px) {
   /* meniu */
